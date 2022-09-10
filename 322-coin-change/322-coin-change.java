@@ -6,13 +6,9 @@ class Solution {
             for(int j = 0 ; j<sum+1 ; j++){
                 if(i==0 ) dp[i][j]=Integer.MAX_VALUE-1;
                 if(j==0) dp[i][j]=0;
-                if(i!=0 && j!=0) dp[i][j]=9;
+                if(j%coins[0]==0) dp[1][j]=j/coins[0];
+                else if(j%coins[0]!=0) dp[1][j]=Integer.MAX_VALUE-1;
             }
-        }
-        for(int j = 0 ; j<sum+1 ; j++) 
-        {
-            if(j%coins[0]==0) dp[1][j]=j/coins[0];
-            else dp[1][j]=Integer.MAX_VALUE-1;
         }
 
         for(int i = 2 ; i<n+1 ; i++){
